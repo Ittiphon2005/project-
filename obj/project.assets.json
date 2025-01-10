@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\WinFormsApp5\\project--2\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Desktop\\project-\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "D:\\Project\\WinFormsApp5\\project--2\\WinFormsApp1.csproj",
+      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\project-\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\WinFormsApp5\\project--2\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\project-\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

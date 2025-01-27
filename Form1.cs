@@ -2,12 +2,45 @@
 {
     public partial class Form1 : Form
     {
+        Item itemCoffee = new Item();
+        Item itemGreentea = new Item();
+        Item itemNoodle = new Item();
+        Item itemPizza = new Item();
         public Form1()
         {
             InitializeComponent();
+
+            itemCoffee.Name = "Coffee";
+            itemCoffee.Price = 80;
+            itemCoffee.Quantity = 0;
+
+            itemGreentea.Name = "Greentea";
+            itemGreentea.Price = 65;
+            itemGreentea.Quantity = 0;
+
+            itemNoodle.Name = "Noodle";
+            itemNoodle.Price = 40;
+            itemNoodle.Quantity = 0;
+
+            itemPizza.Name = "Pizza";
+            itemPizza.Price = 179;
+            itemPizza.Quantity = 0;
+
+
+            coffeeP.Text = itemCoffee.Price.ToString();
+            coffeeQ.Text = itemCoffee.Quantity.ToString();
+
+            grP.Text = itemGreentea.Price.ToString();
+            grQ.Text = itemGreentea.Quantity.ToString();
+
+            nP.Text = itemNoodle.Price.ToString();
+            nQ.Text = itemNoodle.Quantity.ToString();
+
+            pP.Text = itemPizza.Price.ToString();
+            pQ.Text = itemPizza.Quantity.ToString();
         }
 
-        private void textBox13_TextChanged(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -24,20 +57,24 @@
 
                     if (checkc.Checked)
                     {
-                        dBeverageTotal += GetItemTotal(coffeeP.Text, coffeeQ.Text);
+                        itemCoffee.Quantity = int.Parse(coffeeQ.Text);
+                        dBeverageTotal += itemCoffee.GetTotalPrice();
                     }
                     if (checkg.Checked)
                     {
-                        dBeverageTotal += GetItemTotal(grP.Text, grQ.Text);
+                        itemGreentea.Quantity = int.Parse(grQ.Text);
+                        dBeverageTotal += itemGreentea.GetTotalPrice();
                     }
 
                     if (checkN.Checked)
                     {
-                        dFoodTotal += GetItemTotal(nP.Text, nQ.Text);
+                        itemNoodle.Quantity = int.Parse(nQ.Text);
+                        dFoodTotal += itemNoodle.GetTotalPrice();
                     }
                     if (checkP.Checked)
                     {
-                        dFoodTotal += GetItemTotal(pP.Text, pQ.Text);
+                        itemPizza.Quantity = int.Parse(pQ.Text);
+                        dFoodTotal += itemPizza.GetTotalPrice();
                     }
 
                     double dGrandTotal = dBeverageTotal + dFoodTotal;
@@ -61,30 +98,17 @@
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("กรุณากรอกข้อมูลตัวเลขให้ถูกต้อง", "ข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please fill in the numbers correctly", "Eoror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
         }
 
-        private double GetItemTotal(string priceText, string quantityText)
-        {
-            double price = 0, quantity = 0;
-            try
-            {
-                price = double.Parse(priceText);
-                quantity = double.Parse(quantityText);
-            }
-            catch (Exception)
-            {
-                price = 0;
-                quantity = 0;
-            }
-            return price * quantity;
-        }
+
         private double CalculateTotalDiscount(double dBeverageTotal, double dFoodTotal, double dGrandTotal)
         {
             double dDiscountBev = checkB.Checked ? double.Parse(disB.Text) : 0;
-            double dDiscountFood = checkF.Checked ? double.Parse(dissF.Text) : 0;
+            double dDiscountFood = checkF.Checked ? double.Parse(disF.Text) : 0;
             double dDiscountAll = checkA.Checked ? double.Parse(disall.Text) : 0;
 
             double dTotalDiscount = (dBeverageTotal * dDiscountBev / 100) + (dFoodTotal * dDiscountFood / 100) + (dGrandTotal * dDiscountAll / 100);
@@ -114,7 +138,7 @@
             tb1.Text = changeCount[7].ToString();
         }
 
-        private void checkA_CheckedChanged(object sender, EventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

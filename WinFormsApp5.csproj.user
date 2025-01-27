@@ -4,14 +4,5 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="project--1\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="project--2\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="project-\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

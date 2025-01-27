@@ -43,7 +43,7 @@
             nP = new TextBox();
             pQ = new TextBox();
             pP = new TextBox();
-            dissF = new TextBox();
+            disF = new TextBox();
             disB = new TextBox();
             disall = new TextBox();
             tb1000 = new TextBox();
@@ -76,6 +76,7 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
+            groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,7 +129,6 @@
             checkA.TabIndex = 4;
             checkA.Text = "All";
             checkA.UseVisualStyleBackColor = true;
-            checkA.CheckedChanged += checkA_CheckedChanged;
             // 
             // checkB
             // 
@@ -152,66 +152,66 @@
             // 
             // coffeeQ
             // 
-            coffeeQ.Location = new Point(168, 33);
+            coffeeQ.Location = new Point(268, 19);
             coffeeQ.Name = "coffeeQ";
             coffeeQ.Size = new Size(125, 27);
             coffeeQ.TabIndex = 7;
             // 
             // grQ
             // 
-            grQ.Location = new Point(168, 65);
+            grQ.Location = new Point(268, 52);
             grQ.Name = "grQ";
             grQ.Size = new Size(125, 27);
             grQ.TabIndex = 8;
             // 
             // nQ
             // 
-            nQ.Location = new Point(168, 171);
+            nQ.Location = new Point(299, 167);
             nQ.Name = "nQ";
             nQ.Size = new Size(125, 27);
             nQ.TabIndex = 9;
             // 
             // coffeeP
             // 
-            coffeeP.Location = new Point(299, 33);
+            coffeeP.Location = new Point(137, 19);
             coffeeP.Name = "coffeeP";
             coffeeP.Size = new Size(125, 27);
             coffeeP.TabIndex = 10;
             // 
             // grP
             // 
-            grP.Location = new Point(299, 65);
+            grP.Location = new Point(137, 52);
             grP.Name = "grP";
             grP.Size = new Size(125, 27);
             grP.TabIndex = 11;
             // 
             // nP
             // 
-            nP.Location = new Point(299, 171);
+            nP.Location = new Point(168, 166);
             nP.Name = "nP";
             nP.Size = new Size(125, 27);
             nP.TabIndex = 12;
             // 
             // pQ
             // 
-            pQ.Location = new Point(168, 204);
+            pQ.Location = new Point(299, 200);
             pQ.Name = "pQ";
             pQ.Size = new Size(125, 27);
             pQ.TabIndex = 13;
             // 
             // pP
             // 
-            pP.Location = new Point(299, 204);
+            pP.Location = new Point(168, 199);
             pP.Name = "pP";
             pP.Size = new Size(125, 27);
             pP.TabIndex = 14;
             // 
-            // dissF
+            // disF
             // 
-            dissF.Location = new Point(201, 385);
-            dissF.Name = "dissF";
-            dissF.Size = new Size(125, 27);
-            dissF.TabIndex = 15;
+            disF.Location = new Point(201, 385);
+            disF.Name = "disF";
+            disF.Size = new Size(125, 27);
+            disF.TabIndex = 15;
             // 
             // disB
             // 
@@ -233,7 +233,6 @@
             tb1000.Name = "tb1000";
             tb1000.Size = new Size(125, 27);
             tb1000.TabIndex = 26;
-            tb1000.TextChanged += textBox13_TextChanged;
             // 
             // tbChange
             // 
@@ -307,6 +306,10 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(coffeeQ);
+            groupBox1.Controls.Add(coffeeP);
+            groupBox1.Controls.Add(grQ);
+            groupBox1.Controls.Add(grP);
             groupBox1.Location = new Point(31, 11);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(415, 99);
@@ -316,12 +319,13 @@
             // 
             // groupBox2
             // 
-            groupBox2.Location = new Point(31, 142);
+            groupBox2.Location = new Point(31, 146);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(415, 99);
             groupBox2.TabIndex = 31;
             groupBox2.TabStop = false;
             groupBox2.Text = "Food";
+            groupBox2.Enter += groupBox2_Enter;
             // 
             // groupBox3
             // 
@@ -502,15 +506,11 @@
             Controls.Add(tbTotal);
             Controls.Add(disB);
             Controls.Add(disall);
-            Controls.Add(dissF);
+            Controls.Add(disF);
             Controls.Add(pP);
             Controls.Add(pQ);
             Controls.Add(nP);
-            Controls.Add(grP);
-            Controls.Add(coffeeP);
             Controls.Add(nQ);
-            Controls.Add(grQ);
-            Controls.Add(coffeeQ);
             Controls.Add(checkF);
             Controls.Add(checkB);
             Controls.Add(checkP);
@@ -518,10 +518,12 @@
             Controls.Add(checkg);
             Controls.Add(checkc);
             Controls.Add(groupBox1);
-            Controls.Add(groupBox2);
             Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
             Name = "Form1";
             Text = "Form1";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
@@ -545,7 +547,7 @@
         private TextBox nP;
         private TextBox pQ;
         private TextBox pP;
-        private TextBox dissF;
+        private TextBox disF;
         private TextBox disB;
         private TextBox disall;
         private TextBox tb1000;
